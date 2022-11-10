@@ -4,7 +4,7 @@ const mongoose=require("mongoose")
  const ProductSchema=new mongoose.Schema({
     name:String,
     experience:String,
-    Image: { data: Buffer, contentType: String },
+    // Image: { data: Buffer, contentType: String },
     buy:String,
     Plateform:String
  })
