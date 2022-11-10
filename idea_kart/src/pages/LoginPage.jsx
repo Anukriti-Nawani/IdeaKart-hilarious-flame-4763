@@ -11,7 +11,7 @@ import {
   Button,
   Heading,
   Text,
-  Link,
+
   Checkbox,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -27,7 +27,7 @@ import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIn } from "../redux_s/authaction";
-import { useNavigate } from "react-router-dom";
+import {   Link,useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const LoginPage = () => {
@@ -166,7 +166,7 @@ const LoginPage = () => {
               </Stack>
               <Stack pt={6}>
                 <Text align={"left"}>
-                  <Link color={"blue.400"} to="/signup">Sign up</Link>
+                <Link style={{color:" blue", textDecoration: "underline"}} to="/signup">Log in</Link>
                   <br />
                   <Link color={"blue.500"}>Forgot your password?</Link>
                 </Text>

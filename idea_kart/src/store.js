@@ -23,11 +23,10 @@ import {legacy_createStore, compose, combineReducers,applyMiddleware} from "redu
 import thunk from "redux-thunk";
 import { authReducer } from "./redux_s/authReducer";
 
-import { reducer } from "./redux/reducer";
+
 
 const rootreducers = combineReducers({
     auth: authReducer,
-    reducer: reducer,
 });
 
 const createComposer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

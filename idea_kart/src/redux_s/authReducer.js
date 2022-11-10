@@ -7,16 +7,16 @@ import {
     AUTH_SIGN_UP_LOADING,
     AUTH_SIGN_UP_SUCCESS,
   } from "./authactionTypes";
-  
+  const user =JSON.parse(localStorage.getItem("user"))
   export const initState = {
     loading: false,
     token: "",
-    isAuth: false,
-    user: {},
+    isAuth: !!user,
+    user: user,
     isAuth: false,
     error: false,
   };
-  
+  console.log(user);
   export const authReducer = (state = initState, action) => {
     console.log(action);
     switch (action.type) {
@@ -50,6 +50,7 @@ import {
         };
       }
       case AUTH_LOGIN_IN_SUCCESS: {
+        localStorage.setItem("user",  JSON.stringify(action.payload.user)); 
         return {
           ...state,
           loading: false,
