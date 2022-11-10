@@ -8,7 +8,7 @@ import Contactpage from "../pages/Contactpage";
 // import Checkout from "../products/Checkout";
 // import Description from "../products/Description";
 // import Pay from "../products/Pay";
-// import { Products } from "../products/Products";
+import { Products } from "../products/Products";
 // import Signin from "../signin/Signin";
 // import Signup from "../signup/Signup";
 
@@ -18,6 +18,7 @@ const AllRoutes = () => {
       <Routes>
       <Route path="/contact" element={<Contactpage />} />
       <Route path="/about" element={<About />} />
+      <Route path={"/"} element={<Products />} />
         {/* <Route path={"/"} element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
