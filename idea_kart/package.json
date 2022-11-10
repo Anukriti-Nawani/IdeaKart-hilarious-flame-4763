@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
-    "@chakra-ui/icons": "^2.0.11",
->>>>>>> main
     "@chakra-ui/react": "^2.3.7",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -22,10 +18,7 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
-<<<<<<< HEAD
     "styled-components": "^5.3.6",
-=======
->>>>>>> main
     "web-vitals": "^2.1.4"
   },
   "scripts": {
