@@ -49,7 +49,7 @@ const SignupPage = () => {
   const handleSubmit = (e) => {
     onOpen();
     e.preventDefault();
-    // dispatch(signUp(text));
+     dispatch(signUp(text));
   };
   const hadlePath = () => {
     onClose();
