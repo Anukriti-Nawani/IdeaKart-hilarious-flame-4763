@@ -37,8 +37,8 @@ setData(res)
           
           return(
             <Box maxH={"98%"}   maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' _hover={{ bg:"rgba(247, 224, 161, 0.8)"}}>
-              <Box backgroundColor="white" width="290px">
-             <Image p={"1rem"} src={el.image} alt="error" width="290px" height="380px"/>
+              <Box backgroundColor="white" width="290px" textAlign={"center"}>
+             <Image p={"1rem"} src={el.image} alt="error" width="290px"  height="380px"/>
              </Box>
              <Box p={"10px"}>
 

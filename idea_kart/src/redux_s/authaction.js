@@ -2,6 +2,7 @@ import {
     AUTH_LOGIN_IN_ERROR,
     AUTH_LOGIN_IN_LOADING,
   AUTH_LOGIN_IN_SUCCESS,
+  AUTH_LOGIN_OUT,
   AUTH_SIGN_UP_ERROR,
   AUTH_SIGN_UP_LOADING,
   AUTH_SIGN_UP_SUCCESS,
@@ -28,3 +29,4 @@ export const LogIn = (x) => async (dispatch) => {
       dispatch({ type: AUTH_LOGIN_IN_ERROR, payload: e.message });
     }
   };
+  export const signOut =()=>({type:AUTH_LOGIN_OUT })

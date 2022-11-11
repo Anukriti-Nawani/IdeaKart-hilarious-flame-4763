@@ -8,7 +8,7 @@ const Ptag = styled.p`
 text-align:justify;
   margin-left: 60px;
   margin-right: 60px;
-  font-weignt: bold !important;
+  font-weight: bold !important;
   font-size: 20px;
 //   margin-bottom: 420px;
 // padding-bottom: 2rem;
