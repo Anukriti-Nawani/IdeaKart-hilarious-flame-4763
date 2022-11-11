@@ -27,6 +27,8 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../redux_s/authaction";
 import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
 
 const SignupPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -156,14 +158,18 @@ const SignupPage = () => {
               </Stack>
               <Stack pt={6}>
                 <Text align={"left"}>
-                  <Link color={"blue.400"}>Login</Link>
+                  <Link color={"blue.400"}  onClick={() => {
+                navigate("/login");
+              }}
+                 
+                  >Login</Link>
                 </Text>
               </Stack>
             </Stack>
           </Box>
         </Stack>
       </Flex>
-      <Heading>Foooer</Heading>
+      
     </>
   );
 };

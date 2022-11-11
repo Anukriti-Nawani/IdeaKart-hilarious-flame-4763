@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { fetchdata} from "../redux/action";
-import { SimpleGrid,Box,Image,Text, Flex,HStack,Link } from '@chakra-ui/react'
+import { SimpleGrid,Box,Image,Text, Flex,HStack } from '@chakra-ui/react'
 import { FaShoppingCart,FaList } from "react-icons/fa";
 import axios from "axios";
+import  {Link} from "react-router-dom"
 
 // import Productcard from "./Productcard";
 // import "./product.css";
@@ -27,7 +28,7 @@ setData(res)
   // {console.log(productsData)}
   return (
     <div className="productbody">
-        <Text m={"10px"} ml={"20px"} fontWeight="bold" fontSize='2xl'>Top Reads</Text>
+        <Text m={"10px"} ml={"20px"} fontWeight="bold" fontSize='2xl' textAlign="left">Top Reads</Text>
         <SimpleGrid mt={"5px"} ml={"30px"} mr={"30px"} columns={[1,2,3,4]}  spacing={5}>
 
       {/* <div className="productcontainer"> */}
@@ -43,11 +44,11 @@ setData(res)
 
               
              <Text fontSize='sm' textAlign="justify" noOfLines={1} letterSpacing="-1px">{el.name}</Text>
-             <Text color="rgb(99,102,241)" fontSize='sm' textAlign="left">{el.price}</Text>
+             <Text color="rgb(99,102,241)" fontSize='sm' textAlign="left">{`Price: ${el.price}`}</Text>
              <hr></hr>
              <Flex mt={"5px"}>
-              <HStack   pr={"2rem"}  borderRight="1px" borderColor='gray.200'><FaShoppingCart/> <Text  color="rgb(99,102,241)"><Link to="" >View Now</Link></Text>   </HStack>
-              <HStack pl={"1rem"}><FaList/><Text  color="rgb(99,102,241)"><Link to="">More details</Link></Text></HStack>
+              <HStack   pr={"2rem"}  borderRight="1px" borderColor='gray.200'><FaShoppingCart/> <Text  color="rgb(99,102,241)"><Link to={`/ViewNow/${el._id}`}>View Now</Link></Text>   </HStack>
+              <HStack pl={"1rem"}><FaList/><Text  color="rgb(99,102,241)"><Link to={`/ViewNow/${el._id}`}>More details</Link></Text></HStack>
              </Flex>
              </Box>
           </Box>)

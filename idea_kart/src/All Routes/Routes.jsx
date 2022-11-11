@@ -14,6 +14,8 @@ import SignupPage from "../pages/SignUpPage";
 import { Products } from "../products/Products";
 // import Signin from "../signin/Signin";
 // import Signup from "../signup/Signup";
+import Search from "../search/search";
+import ViewNow from "../viewNow/ViewNow";
 
 const AllRoutes = () => {
   return (
@@ -29,6 +31,9 @@ const AllRoutes = () => {
 
       <Route path="/login" element={<LoginPage />}></Route>
       <Route path="/signup" element={<SignupPage />}></Route>
+      <Route path="/search" element={<Search />}></Route>
+      <Route path="/ViewNow/:id" element={<ViewNow />}></Route>
+
         {/* <Route path={"/"} element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />

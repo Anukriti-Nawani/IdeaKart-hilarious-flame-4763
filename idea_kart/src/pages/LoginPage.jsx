@@ -30,6 +30,7 @@ import { LogIn } from "../redux_s/authaction";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
+
 const LoginPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
@@ -166,7 +167,11 @@ const LoginPage = () => {
               </Stack>
               <Stack pt={6}>
                 <Text align={"left"}>
-                  <Link to="/signup" color={"blue.400"}>Sign up</Link>
+                  <Link to="/signup" color={"blue.400"}
+                   onClick={() => {
+                navigate("/signup");
+              }}
+                  >Sign up</Link>
                   <br />
                   <Link color={"blue.500"}>Forgot your password?</Link>
                 </Text>

@@ -1,6 +1,8 @@
 import { legacy_createStore, applyMiddleware, combineReducers, compose } from "redux";
 import thunk from "redux-thunk";
 import { authReducer } from "./redux_s/authReducer";
+import viewReducer from "./viewNow/viewReducer";
+
 
 
 
@@ -23,6 +25,7 @@ import { authReducer } from "./redux_s/authReducer";
 
 const rootreducers = combineReducers({
     auth: authReducer,
+    views: viewReducer,
     
 });
 
