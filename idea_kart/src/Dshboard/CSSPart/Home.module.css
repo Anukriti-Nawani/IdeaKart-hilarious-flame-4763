@@ -7,6 +7,8 @@
     align-items: center;
     text-align: center;
     margin-top: 50px;
+    margin-left: -40px;
+
 
 }
 
@@ -22,18 +24,25 @@
 
 .productprocess>div:nth-child(1){
  
-    background-color: green;
+    background-color: rgb(120, 240, 120);
 
 }
 
 .productprocess>div:nth-child(2){
  
-    background-color: orangered;
+    background-color: rgba(247, 130, 53, 0.623);
     
 }
 
 .productprocess>div:nth-child(3){
 
-    background-color:rgb(182, 104, 108);
+    background-color:rgb(247, 17, 17);
     
+}
+
+.container>h1{
+    margin-top: 50px;
+    font-size: 29px;
+    text-align: left;
+    margin-bottom: 20px;
 }

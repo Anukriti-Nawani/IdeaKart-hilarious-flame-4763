@@ -10,15 +10,18 @@ import {
   Spacer
 } from '@chakra-ui/react'
 
+import { useDispatch ,useSelector} from 'react-redux'
+import { AddToProduct } from '../redux_a/prod.action'
 
 
 const NewProduct = () => {
+  const dispatch=useDispatch()
   const [name, setname] = useState("")
   const [experience, setexp] = useState("")
   const [file, setfile] = useState("")
   const [buy, setbuy] = useState("")
   const [plateform, setplateform] = useState("")
-  
+  const {prod}=useSelector(store=>store)
 
  const handleImage=(e)=>{
 
@@ -38,21 +41,18 @@ const file=e.target.files[0]
 
 const handleSubmit=(e)=>{
   e.preventDefault()
- 
- axios.post("http://localhost:8080/product",{
-  name,
-  experience,
-  file,
-  buy,
-  plateform 
- })
 
-
-
+  dispatch(AddToProduct({name,experience,file,buy,plateform}))
 }
+
+
+if(prod.error){
+  return alert("something went wrong try again")
+}
+
 return (
     <div>
-    <h1>New Review</h1>
+    <h1  style={{marginTop:"80px",marginLeft:"90px",marginBottom:"30px",fontSize:"30px"}} >New Review</h1>
 
 
     <FormControl  maxW="660px" mx="auto" color='black' onSubmit={handleSubmit}>
@@ -68,7 +68,7 @@ return (
   <Spacer/>
 
   <FormLabel>Did you bought it online or offline</FormLabel>
-  <Select placeholder='Select country'onChange={(e)=>setbuy(e.target.value)} name="buy" value={buy} >
+  <Select placeholder='Select One'onChange={(e)=>setbuy(e.target.value)} name="buy" value={buy} >
   <option>online</option>
   <option>offline</option>
 </Select>
@@ -87,7 +87,7 @@ return (
 
 <Spacer/>
 <Spacer/>
-<Input type='submit' value="Submit" onClick={handleSubmit} />
+<Input type='submit' value="Submit" onClick={handleSubmit} mt="16px" cursor="pointer"/>
 
 
 </FormControl>

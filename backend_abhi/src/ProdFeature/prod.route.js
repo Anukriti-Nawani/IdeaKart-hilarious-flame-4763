@@ -15,8 +15,15 @@ app.get("/", async(req,res)=>{
 
 app.post("/", async (req,res)=>{
     console.log(req.body)
-    const prod=await Product.create({...req.body})
-    res.send(req.body)
+    try{
+        const prod=await Product.create({...req.body})
+        res.send(req.body)
+    }
+    catch(e){
+        const prod=await Product.create({...req.body})
+        res.status(404).send(e.message)
+    }
+   
 
 })
 

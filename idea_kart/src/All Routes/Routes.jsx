@@ -1,6 +1,8 @@
 import React from "react";
 // import { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import Home from "../Dshboard/FunctionalityPart/Home";
+import NewProduct from "../Dshboard/FunctionalityPart/NewProduct";
 import Navbar from "../Navbar/Navbar";
 import About from "../pages/About";
 
@@ -11,7 +13,10 @@ import SignupPage from "../pages/SignUpPage";
 // import Checkout from "../products/Checkout";
 // import Description from "../products/Description";
 // import Pay from "../products/Pay";
-import { Products } from "../products/Products";
+// import { Products } from "../products/Products";
+import Products  from "../Dshboard/FunctionalityPart/Products";
+import Credit from "../Dshboard/FunctionalityPart/Credit";
+
 // import Signin from "../signin/Signin";
 // import Signup from "../signup/Signup";
 

@@ -18,7 +18,7 @@ import {
   };
   
   export const authReducer = (state = initState, action) => {
-    console.log(action);
+    // console.log(action);
     switch (action.type) {
       case AUTH_SIGN_UP_LOADING: {
         return {

@@ -24,10 +24,13 @@ import thunk from "redux-thunk";
 import { authReducer } from "./redux_s/authReducer";
 
 import { reducer } from "./redux/reducer";
+import { productReducer } from "./Dshboard/redux_a/prod.reducer";
 
 const rootreducers = combineReducers({
     auth: authReducer,
     reducer: reducer,
+    prod:productReducer
+
 });
 
 const createComposer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
