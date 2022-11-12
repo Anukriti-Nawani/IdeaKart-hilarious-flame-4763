@@ -17,10 +17,10 @@ app.post("/", async (req,res)=>{
     console.log(req.body)
     try{
         const prod=await Product.create({...req.body})
-        res.send(req.body)
+        res.send(prod)
     }
     catch(e){
-        const prod=await Product.create({...req.body})
+        // const prod=await Product.create({...req.body})
         res.status(404).send(e.message)
     }
    
