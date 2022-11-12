@@ -11,9 +11,9 @@ import {
   Button,
   Heading,
   Text,
-  Link,
   Checkbox,
   useDisclosure,
+  Spinner,
 } from "@chakra-ui/react";
 import {
   AlertDialog,
@@ -27,11 +27,11 @@ import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIn } from "../redux_s/authaction";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-
 const LoginPage = () => {
+  const [loading,setLoading] = useState(false)
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -56,14 +56,19 @@ const LoginPage = () => {
     e.preventDefault();
 
     dispatch(LogIn(creds));
-    if (isAuth) {
-      return onOpen();
-    }
+    onOpen();
+    // if (isAuth) {
+    //   return onOpen();
+    // }
   };
 
   const hadlePath = () => {
     onClose();
-    navigate("/");
+    if (isAuth) {
+      return navigate("/");
+    } else {
+      return;
+    }
   };
   return (
     <>
@@ -146,11 +151,13 @@ const LoginPage = () => {
                   <AlertDialogOverlay>
                     <AlertDialogContent>
                       <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                        You have log in successfully
+                        {isAuth ? " You have log in Successfully." : "Warning!"}
                       </AlertDialogHeader>
 
                       <AlertDialogBody>
-                        Redirect to the Homepage
+                        {isAuth
+                          ? "Redirecting you to the Homepage"
+                          : "Username and password do not match or you do not have an account yet."}
                       </AlertDialogBody>
 
                       <AlertDialogFooter>
@@ -167,11 +174,12 @@ const LoginPage = () => {
               </Stack>
               <Stack pt={6}>
                 <Text align={"left"}>
-                  <Link to="/signup" color={"blue.400"}
-                   onClick={() => {
-                navigate("/signup");
-              }}
-                  >Sign up</Link>
+                  <Link
+                    style={{ color: " blue", textDecoration: "underline" }}
+                    to="/signup"
+                  >
+                   Sign Up
+                  </Link>
                   <br />
                   <Link color={"blue.500"}>Forgot your password?</Link>
                 </Text>

@@ -3,11 +3,12 @@ import './App.css';
 
 import AllRoutes from './All Routes/Routes';
 
+
 function App() {
   return (
     <div className="App">
       <AllRoutes/>
-    
+   
     </div>
   );
 }

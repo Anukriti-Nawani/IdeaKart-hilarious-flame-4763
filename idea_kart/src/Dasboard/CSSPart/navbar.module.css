@@ -1,0 +1,60 @@
+
+.container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    text-align: left;
+
+}
+
+
+.dashboardpart{
+    width: 20%;
+padding-left: 20px;
+    margin-top: 20px;
+    text-align: left;
+    
+}
+.dashboardpart>h1{
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.componentpart{
+    width: 70%;
+
+}
+
+.NewProduct{
+    display: none;
+}
+
+.homeblock{
+    display: block;
+}
+.homenone{
+    display: none;
+}
+
+.NewProductblovk{
+    display: block;
+}
+
+.NewProductnone{
+    display: none;
+}
+
+.Productsblovk{
+    display: block;
+
+}
+.Productsnone{
+    display: none;
+}
+.Creditblock{
+    display: block;
+}
+.Creditnone{
+    display: none;
+}

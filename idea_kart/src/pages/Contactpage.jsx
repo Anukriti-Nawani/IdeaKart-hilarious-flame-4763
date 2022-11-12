@@ -15,7 +15,7 @@ const Contactpage = () => {
         title: "Thank You! Your form has been submitted.",
         
         status: "success",
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
       });
     navigate("/");

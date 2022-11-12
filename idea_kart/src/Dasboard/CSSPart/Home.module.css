@@ -1,0 +1,51 @@
+.productprocess{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: -40px;
+
+
+}
+
+.productprocess>div{
+    height: 180px;
+    width: 250px;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+
+}
+
+.productprocess>div:nth-child(1){
+ 
+    background-color: #008000;
+    
+
+}
+
+.productprocess>div:nth-child(2){
+ 
+    background-color: #ffa502;
+    
+}
+
+.productprocess>div:nth-child(3){
+
+    background-color: #e68787;
+    
+}
+
+.container>h1{
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { fetchdata} from "../redux/action";
-import { SimpleGrid,Box,Image,Text, Flex,HStack } from '@chakra-ui/react'
+import { SimpleGrid,Box,Image,Text, Flex,HStack, Skeleton, Stack } from '@chakra-ui/react'
 import { FaShoppingCart,FaList } from "react-icons/fa";
 import axios from "axios";
 import  {Link} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 // import Productcard from "./Productcard";
 // import "./product.css";
@@ -15,17 +16,32 @@ const fetchdata = async() => {
 };
 export const Products = () => {
   const [productsData,setData] = useState([])
-  
-  
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const navigate = useNavigate()
   
   useEffect(() => {
-   fetchdata().then((res) => {
-// console.log(res)
-setData(res)
-   })
+    setLoading(true);
+    fetchdata().then((res) => {
+      // console.log(res)
+      setData(res);
+      setLoading(false);
+    }).then((e)=>{
+        setError(true)
+    });
   }, []);
-  // console.log(productsData !==null);
-  // {console.log(productsData)}
+
+  // loading
+  if (loading) {
+    return (
+      <Stack>
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+      </Stack>
+    );
+  }
+ 
   return (
     <div className="productbody">
         <Text m={"10px"} ml={"20px"} fontWeight="bold" fontSize='2xl' textAlign="left">Top Reads</Text>
@@ -36,7 +52,7 @@ setData(res)
         {productsData.map((el) => {
           
           return(
-            <Box maxH={"98%"}   maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' _hover={{ bg:"rgba(247, 224, 161, 0.8)"}}>
+            <Link to={`/ViewNow/${el._id}`}><Box maxH={"98%"}   maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' _hover={{ bg:"rgba(247, 224, 161, 0.8)"}}>
               <Box backgroundColor="white" width="290px">
              <Image p={"1rem"} src={el.image} alt="error" width="290px" height="380px"/>
              </Box>
@@ -51,7 +67,8 @@ setData(res)
               <HStack pl={"1rem"}><FaList/><Text  color="rgb(99,102,241)"><Link to={`/ViewNow/${el._id}`}>More details</Link></Text></HStack>
              </Flex>
              </Box>
-          </Box>)
+          </Box>
+          </Link>)
         })}
         
       {/* </div> */}
