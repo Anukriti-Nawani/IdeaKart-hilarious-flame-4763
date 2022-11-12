@@ -38,15 +38,6 @@ export const Products = () => {
       </Stack>
     );
   }
-  if (error) {
-    return (
-      <Stack>
-        <Skeleton height="20px" />
-        <Skeleton height="20px" />
-        <Skeleton height="20px" />
-      </Stack>
-    );
-  }
   
   // console.log(productsData !==null);
   // {console.log(productsData)}
