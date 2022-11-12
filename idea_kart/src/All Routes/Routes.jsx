@@ -21,6 +21,7 @@ import { Products } from "../products/Products";
 // import Signup from "../signup/Signup";
 import Search from "../search/search";
 import ViewNow from "../viewNow/ViewNow";
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes = () => {
   return (
@@ -37,7 +38,8 @@ const AllRoutes = () => {
         <Route path="/notifications" element={<Notifications />}></Route>
         <Route path="/accountinfo" element={<AccountInfoPage />}></Route>
         <Route path="/ViewNow/:id" element={<ViewNow />}></Route>
-        <Route path="/cart" element={<CartPage />} />
+        
+        <Route path="/cart" element={<PrivateRoute><CartPage /></PrivateRoute>} />
         <Route path="/accountinfo" element={<AccountInfoPage />}></Route>
         <Route path="/payment" element={<PaymentPage />} />
         {/* <Route path={"/"} element={<Products />} />

@@ -11,7 +11,7 @@ const user =JSON.parse(localStorage.getItem("user"))
 export const initState = {
   loading: false,
   token: "",
-  isAuth: !!user,
+  isAuth: false,
   user: user,
   isAuth: false,
   error: false,

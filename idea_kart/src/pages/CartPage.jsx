@@ -17,6 +17,8 @@ import {
   Box,
   Spacer,
   Container,
+  Stack,
+  Skeleton,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
@@ -24,7 +26,7 @@ import { Link } from "react-router-dom";
 // console.log(data);
 const CartPage = () => {
   const cart = JSON.parse(localStorage.getItem("cart"));
-
+  const [loading, setLoading] = useState(false);
   const [items, setItems] = useState(cart);
   const [total, setTotal] = useState(0);
   const removeItem = (id) => {

@@ -24,7 +24,7 @@ export default function ViewNow() {
       title: 'Item Added to the cart.',
       description: "You can find it in the Cart page.",
       status: 'success',
-      duration: 9000,
+      duration: 3000,
       isClosable: true,
     })
   };
