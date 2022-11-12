@@ -7,17 +7,22 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Footer from './Footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { store } from './store';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <ChakraProvider>
+    
       <Provider store={store}>
     <App />
+   
     <Footer />
+
     </Provider>
+  
     </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>

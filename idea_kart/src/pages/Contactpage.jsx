@@ -15,7 +15,7 @@ const Contactpage = () => {
         title: "Thank You! Your form has been submitted.",
         
         status: "success",
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
       });
     navigate("/");
@@ -69,17 +69,18 @@ const Contactpage = () => {
         <p>Message*</p>
         <textarea className="msg2" type="text"></textarea>
         <button
-          style={{
-            backgroundColor: "#5cb85c",
-            color: "white",
-            padding: "10px 0px",
-            borderRadius: "3px",
-            margin: "auto",
-            marginTop: "20px",
-            width: "12%",
-            cursor: "pointer",
-            fontSize: "bold",
-          }}
+        className="button"
+          // style={{
+          //   backgroundColor: "#5cb85c",
+          //   color: "white",
+          //   padding: "10px 0px",
+          //   borderRadius: "3px",
+          //   margin: "auto",
+          //   marginTop: "20px",
+          //   width: "12%",
+          //   cursor: "pointer",
+          //   fontSize: "bold",
+          // }}
           type="submit"
         >
           Send message

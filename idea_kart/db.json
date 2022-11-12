@@ -1,0 +1,32 @@
+{
+    "products":[
+    {
+        "_id": "636e28dc849f332e094648a0",
+        "name": "Trigger Points (A Little Book of Self Care)",
+        "price": 326.48,
+        "image": "https://images-eu.ssl-images-amazon.com/images/I/41nh5k5gEsL.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "636e293a849f332e094648a3",
+        "name": "Mayo Clinic on Digestive Health: How to Prevent and Treat Common Stomach and Gut Problems",
+        "price": 1406,
+        "image": "https://images-eu.ssl-images-amazon.com/images/I/41tXJGxzijL.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "636e296d849f332e094648a5",
+        "name": "Restore Hearing Naturally: How to Use Your Inner Resources to Bring Back Full Hearing",
+        "price": 1786,
+        "image": "https://images-eu.ssl-images-amazon.com/images/I/41Z6eue2XfL.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "636e299d849f332e094648a7",
+        "name": "Dead Man to Iron Man: A Ten Month Journey from Dead Meat to Athlete",
+        "price": 882,
+        "image": "https://images-eu.ssl-images-amazon.com/images/I/51HR0705z3L.jpg",
+        "__v": 0
+    }
+]
+}
