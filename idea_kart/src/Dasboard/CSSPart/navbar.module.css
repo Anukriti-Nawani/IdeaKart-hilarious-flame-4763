@@ -9,7 +9,7 @@
 
 
 .dashboardpart{
-    width: 20%;
+    width: 30%;
 padding-left: 20px;
     margin-top: 20px;
     text-align: left;
@@ -57,4 +57,16 @@ padding-left: 20px;
 }
 .Creditnone{
     display: none;
+}
+@media (min-width:100px) and (max-width: 960px) {
+
+    .container{
+        display: block;
+        margin: 7rem;
+    }
+
+   
+    .dashboardpart{
+        width: 80%;
+    }
 }

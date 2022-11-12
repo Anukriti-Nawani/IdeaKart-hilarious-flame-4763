@@ -31,12 +31,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const LoginPage = () => {
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const cancelRef = React.useRef();
   const { isAuth } = useSelector((store) => store.auth);
+  const { error } = useSelector((store) => store.auth);
   console.log(isAuth);
   const dispatch = useDispatch();
   const data = useSelector((store) => store.auth);
@@ -143,34 +144,67 @@ const LoginPage = () => {
                 >
                   Log in
                 </Button>
-                <AlertDialog
-                  isOpen={isOpen}
-                  leastDestructiveRef={cancelRef}
-                  onClose={onClose}
-                >
-                  <AlertDialogOverlay>
-                    <AlertDialogContent>
-                      <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                        {isAuth ? " You have log in Successfully." : "Warning!"}
-                      </AlertDialogHeader>
+                {isAuth && (
+                  <AlertDialog
+                    isOpen={isOpen}
+                    leastDestructiveRef={cancelRef}
+                    onClose={onClose}
+                  >
+                    <AlertDialogOverlay>
+                      <AlertDialogContent>
+                        <AlertDialogHeader fontSize="lg" fontWeight="bold">
+                          You have log in Successfully
+                        </AlertDialogHeader>
 
-                      <AlertDialogBody>
-                        {isAuth
-                          ? "Redirecting you to the Homepage"
-                          : "Username and password do not match or you do not have an account yet."}
-                      </AlertDialogBody>
+                        <AlertDialogBody>
+                          Redirecting you to the Homepage
+                        </AlertDialogBody>
 
-                      <AlertDialogFooter>
-                        <Button ref={cancelRef} onClick={onClose}>
-                          Cancel
-                        </Button>
-                        <Button colorScheme="blue" onClick={hadlePath} ml={3}>
-                          OK
-                        </Button>
-                      </AlertDialogFooter>
-                    </AlertDialogContent>
-                  </AlertDialogOverlay>
-                </AlertDialog>
+                        <AlertDialogFooter>
+                          <Button ref={cancelRef} onClick={onClose}>
+                            Cancel
+                          </Button>
+                          <Button colorScheme="blue" onClick={hadlePath} ml={3}>
+                            OK
+                          </Button>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialogOverlay>
+                  </AlertDialog>
+                )}
+                {error && (
+                  <AlertDialog
+                    isOpen={isOpen}
+                    leastDestructiveRef={cancelRef}
+                    onClose={onClose}
+                  >
+                    <AlertDialogOverlay>
+                      <AlertDialogContent>
+                        <AlertDialogHeader
+                          fontSize="lg"
+                          fontWeight="bold"
+                          color={"red"}
+                        >
+                          Warning!
+                        </AlertDialogHeader>
+
+                        <AlertDialogBody>
+                          Username and password do not match or you do not have
+                          an account yet.
+                        </AlertDialogBody>
+
+                        <AlertDialogFooter>
+                          <Button ref={cancelRef} onClick={onClose}>
+                            Cancel
+                          </Button>
+                          <Button colorScheme="blue" onClick={onClose} ml={3}>
+                            OK
+                          </Button>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialogOverlay>
+                  </AlertDialog>
+                )}
               </Stack>
               <Stack pt={6}>
                 <Text align={"left"}>
@@ -178,7 +212,7 @@ const LoginPage = () => {
                     style={{ color: " blue", textDecoration: "underline" }}
                     to="/signup"
                   >
-                   Sign Up
+                    Sign Up
                   </Link>
                   <br />
                   <Link color={"blue.500"}>Forgot your password?</Link>
@@ -188,8 +222,6 @@ const LoginPage = () => {
           </Box>
         </Stack>
       </Flex>
-
-    
     </>
   );
 };

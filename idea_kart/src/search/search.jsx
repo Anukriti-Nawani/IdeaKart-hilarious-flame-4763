@@ -6,13 +6,17 @@ import { useEffect, useState } from "react"
 export default function ViewNow(){
 
     const [data,setData] = useState({})
-    const searchGetData = JSON.parse(localStorage.getItem("searchItem"))
-console.log(searchGetData)
+    
+    const searchGetData = JSON.parse(localStorage.getItem("searchItem")) || undefined;
+
+    console.log(searchGetData)
 
     useEffect(() => {
         setData(searchGetData)
     }, [])
-
+if(JSON.parse(localStorage.getItem("searchItem"))== undefined){
+    return <div>.....Error</div>
+}
 
 
     return(

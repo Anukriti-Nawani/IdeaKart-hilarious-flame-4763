@@ -66,9 +66,12 @@ const Contactpage = () => {
       </div>
 
       <div className="msg1">
+      <br />
         <p>Message*</p>
+        
         <textarea className="msg2" type="text"></textarea>
         <button
+        className="btn"
           style={{
             backgroundColor: "#5cb85c",
             color: "white",
@@ -76,7 +79,7 @@ const Contactpage = () => {
             borderRadius: "3px",
             margin: "auto",
             marginTop: "20px",
-            width: "12%",
+            width: "200px",
             cursor: "pointer",
             fontSize: "bold",
           }}
