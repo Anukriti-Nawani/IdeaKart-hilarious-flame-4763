@@ -90,6 +90,7 @@ export default function ViewNow() {
                       color="white"
                       bg="#f0ad4e"
                       size={{ base: "sm", sm: "md", md: "md", lg: "lg" }}
+                      onClick={handleDetails}
                     >
                       Buy Now
                     </Button>

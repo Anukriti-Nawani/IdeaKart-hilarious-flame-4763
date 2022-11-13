@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
 const CartPage = () => {
   const cart = JSON.parse(localStorage.getItem("cart"));
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState(cart);
+  const [items, setItems] = useState(cart || []);
   const [total, setTotal] = useState(0);
   const removeItem = (id) => {
     console.log(id);
@@ -99,7 +99,7 @@ const CartPage = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {items.map((el, i) => (
+            {items?.map((el, i) => (
               <Tr key={el._id}>
                 <Td textAlign={"center"} maxWidth={["120px", "160px"]}>
                   <Image

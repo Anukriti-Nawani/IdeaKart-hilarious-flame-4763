@@ -14,6 +14,8 @@ import {
   Checkbox,
   useDisclosure,
   Spinner,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import {
   AlertDialog,
@@ -31,14 +33,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const LoginPage = () => {
-  const [loading, setLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const cancelRef = React.useRef();
   const { isAuth } = useSelector((store) => store.auth);
   const { error } = useSelector((store) => store.auth);
-  console.log(isAuth);
+  const { loading } = useSelector((store) => store.auth);
+  const [load, setLoad] = useState(false);
+  console.log(loading);
   const dispatch = useDispatch();
   const data = useSelector((store) => store.auth);
   console.log(data);
@@ -55,8 +58,9 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setLoad(true);
     dispatch(LogIn(creds));
+    setLoad(false);
     onOpen();
     // if (isAuth) {
     //   return onOpen();
@@ -71,6 +75,7 @@ const LoginPage = () => {
       return;
     }
   };
+
   return (
     <>
       <Flex
@@ -80,6 +85,7 @@ const LoginPage = () => {
         justify={"center"}
         // bg={useColorModeValue("gray.50", "gray.800")}
       >
+          
         <Stack
           spacing={8}
           mx={"auto"}
@@ -88,6 +94,15 @@ const LoginPage = () => {
           px={6}
           // border={"1px solid red"}
         >
+           {loading && (
+                  <Stack>
+                    {" "}
+                    <Alert status="info">
+                      <AlertIcon />
+                     Login Request !
+                    </Alert>
+                  </Stack>
+                )}
           <Stack align={"left"}>
             <Heading fontSize={"3xl"} textAlign={"left"}>
               Log in
@@ -205,6 +220,7 @@ const LoginPage = () => {
                     </AlertDialogOverlay>
                   </AlertDialog>
                 )}
+             
               </Stack>
               <Stack pt={6}>
                 <Text align={"left"}>

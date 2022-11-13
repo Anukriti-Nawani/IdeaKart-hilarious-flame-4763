@@ -18,6 +18,7 @@ import {
   Menu,
   MenuList,
   MenuButton,
+  useToast,
 } from "@chakra-ui/react";
 import { GoThreeBars } from "react-icons/go";
 
@@ -40,8 +41,16 @@ export default function Navbar() {
   const [inputData, setInputData] = useState();
   const user = JSON.parse(localStorage.getItem("user"));
   const dispatch = useDispatch();
+  const toast = useToast()
   const handleSignOut = () => {
     dispatch(logOut());
+    toast({
+      title: 'Sign Out.',
+      description: "You've Sign Out Successfully.",
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+    })
   };
 
   // useEffect(()=>{
@@ -68,110 +77,6 @@ export default function Navbar() {
       });
   };
 
-  // dashboard nav with if/else
-  // if (isAuth) {
-  //   return (
-  //     <>
-  //       <Box bg="#2874f0" height="60px" py="8px">
-  //         <Flex direction="row" justifyContent="space-between">
-  //           <Box width="770px">
-  //             <Flex direction="row">
-  //               <Spacer />
-
-  //               <Link to="/">
-  //                 <Box
-  //                   fontFamily="-moz-initial"
-  //                   color="yellow"
-  //                   py="5px"
-  //                   fontSize="20px"
-  //                 >
-  //                   IDEAKART
-  //                 </Box>
-  //               </Link>
-  //               <Spacer />
-
-  //               <Box
-  //                 borderRadius="10px"
-  //                 bg="#ffffff"
-  //                 width="470px"
-  //                 border={"1px solid grey"}
-  //                 boxShadow="lg"
-  //               >
-  //                 <InputGroup>
-  //                   <InputRightElement width="60px" pointerEvents="none" />
-  //                   <Input
-  //                     placeholder="Search"
-  //                     value={inputData}
-  //                     onChange={handleChange}
-  //                   />
-  //                   <button
-  //                     onClick={handleSubmit}
-  //                     style={{
-  //                       fontSize: "15px",
-  //                       paddingLeft: "0.5rem",
-  //                       paddingRight: "0.5rem",
-  //                     }}
-  //                   >
-  //                     Search
-  //                   </button>
-  //                 </InputGroup>
-  //               </Box>
-  //             </Flex>
-  //           </Box>
-  //           <Center>
-  //             <Box color="white" width="450px">
-  //               <Flex>
-  //                 <Link to="/about">
-  //                   <Box>About</Box>
-  //                 </Link>
-  //                 <Spacer />
-  //                 <Link to="/contact">
-  //                   <Box>Contact</Box>
-  //                 </Link>
-  //                 <Spacer />
-
-  //                 <Menu border={"1px solid red"} bg={"black"}>
-  //                   <MenuButton as={Text} rightIcon={<ChevronDownIcon />}>
-  //                     {user.name}
-  //                     <ChevronDownIcon />
-  //                   </MenuButton>
-  //                   <MenuList color={"black"}>
-  //                     <MenuItem>
-  //                       <Link to={"/dashboard"}>Dashboard</Link>
-  //                     </MenuItem>
-  //                     <MenuItem>
-  //                       {" "}
-  //                       <Link to={"/accountinfo"}>Account Info</Link>
-  //                     </MenuItem>
-  //                     <MenuItem>
-  //                       <Link to={"/notifications"}>Notifications</Link>
-  //                     </MenuItem>
-  //                     <MenuItem>
-  //                       {" "}
-  //                       <Button
-  //                         varient="outline"
-  //                         bg={"transparent"}
-  //                         onClick={handleSignOut}
-  //                       >
-  //                         Sign Out
-  //                       </Button>
-  //                     </MenuItem>
-  //                   </MenuList>
-  //                 </Menu>
-  //                 <Spacer />
-  //                 <Link to="/cart">
-  //                   <Box>Cart</Box>
-  //                 </Link>
-  //                 <Spacer />
-  //                 <Spacer />
-  //               </Flex>
-  //             </Box>
-  //           </Center>
-  //         </Flex>
-  //       </Box>
-  //     </>
-  //   );
-  // } else {
   return (
     <>
       {isLargerThanHD ? (
