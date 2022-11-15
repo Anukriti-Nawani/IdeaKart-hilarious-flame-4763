@@ -39,7 +39,7 @@ This is a simple project. You can open this project using the above deployed lin
 <h1>Snapshots of our project</h1>
 
 1. This is the Landing page
-![Landing home img](https://i.ibb.co/Sv4yXpM/Screenshot-1075.png)
+![Landing home img](https://i.postimg.cc/bN0yLgLP/Screenshot-1075.png)
 
 2.This is Sign-up & Log-in Page
  ![SignUp Page-Page](https://i.ibb.co/sFLjT5V/Screenshot-1071.png)
