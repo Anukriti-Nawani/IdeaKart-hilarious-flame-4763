@@ -50,3 +50,6 @@ This is a simple project. You can open this project using the above deployed lin
 
  4. This is the Cart page
 ![ Cart page-Page](https://i.ibb.co/84Npr0w/Screenshot-1073.png)
+
+# Deployed website:
+[click here](https://playful-hummingbird-6d8d46.netlify.app/)
