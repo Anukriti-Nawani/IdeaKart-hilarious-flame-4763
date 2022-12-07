@@ -18,6 +18,8 @@ dispatch({type:ADD_PROD,payload:res.data})
 
 }
 
+ // feedback: fp04_393 and fw15_411 - you should use constant file to keep the URLS and make them dynamic
+ // as different env needs different set of URLs or config. 
 
 export const GetToProduct=(data)=>async(dispatch)=>{
 
