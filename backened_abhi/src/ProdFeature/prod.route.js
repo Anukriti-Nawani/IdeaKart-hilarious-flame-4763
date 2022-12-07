@@ -5,7 +5,7 @@ const app=express.Router()
 const Product=require("./prod.model")
 
 app.get("/", async(req,res)=>{
-
+    // feedback: fp04_393 - always use try/catch with async/await
     const prod=await Product.find()
 
     res.send(prod)
