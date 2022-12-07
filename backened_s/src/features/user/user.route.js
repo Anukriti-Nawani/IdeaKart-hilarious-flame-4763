@@ -4,6 +4,9 @@ const User = require("./user.model");
 
 const app = express.Router();
 
+// Feedback: fp04_393
+//    Token should be always encoded, you can use jwt token lib: https://jwt.io/
+//     Password should be always encoded  when saved to DBs. They should never be plain text
 app.post("/signup", async (req, res) => {
   const { name, mobile_no, email, password } = req.body;
   try {
