@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     versionKey: false,
     timestamps:true
 });
+// feedback: fp04_393 - Model names have first letter capital
 const User = mongoose.model("user", userSchema);
 
 module.exports = User;
