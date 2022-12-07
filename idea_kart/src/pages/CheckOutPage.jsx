@@ -67,7 +67,7 @@ const CheckOutPage = () => {
                 <FormLabel>Last Name</FormLabel>
                 <Input type="text" name="mobile_no" />
               </FormControl>
-
+{/* feedback: fp04_393 - use loops to show same elements: https://stackoverflow.com/questions/55642605/how-to-make-for-loop-on-react-select*/}
               <FormControl id="country" isRequired>
                 <FormLabel>Country / Region </FormLabel>
                 <Select placeholder="Select Country">
