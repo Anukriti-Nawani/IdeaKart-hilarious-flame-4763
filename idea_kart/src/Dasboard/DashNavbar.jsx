@@ -52,6 +52,7 @@ useEffect(()=>{
 
     <div className={style.dashboardpart} >
     <h1>Your Dashboard</h1>
+{/*feedback: fw15_411 and fp04_393 - can we use loops for same elements? */}
     <button as={RouterLink} onClick={()=>handleClick("home")} >Home</button>  <br/>
     <button   onClick={()=>handleClick("new")} >New Product</button> <br/>
     <button   onClick={()=>handleClick("prod")} >Product</button> <br/>
