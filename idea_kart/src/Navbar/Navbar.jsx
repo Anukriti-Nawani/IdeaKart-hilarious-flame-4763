@@ -67,6 +67,10 @@ export default function Navbar() {
     setInputData(value);
   };
 
+  // feedback: fp04_393 and fw15_411 - can we reduce this component size?
+  // URLS can be used from constant files
+  // same type of elements can be rendered using loops
+  // You can remove the commented code
   const handleSubmit = () => {
     axios
       .get(`https://data-base.onrender.com/products?name=${inputData}`)

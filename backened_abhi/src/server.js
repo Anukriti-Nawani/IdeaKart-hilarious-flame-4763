@@ -21,7 +21,7 @@ app.use("/product",ProdRoutes)
 
 
 app.listen(PORT,async()=>{
-
+    // feeback: fp04_393 - you can connect DB outside the server callback
     await connect()
 
     console.log(`localhost:${PORT}...listening`)

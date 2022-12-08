@@ -55,7 +55,9 @@ const LoginPage = () => {
       [name]: value,
     });
   };
-
+// feedback: fp04_393 and fw15_411 - can we divide this component?
+// style should be passed as config for ex: if you want to pass color blue at multiple 
+// places you can pass config from one place
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoad(true);
